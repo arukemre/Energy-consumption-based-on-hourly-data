@@ -15,7 +15,8 @@ Bu repository `Kaggle`'da katıldığım `Gdz Elektrik Datathon 2023 ` yarışma
 ![image](https://user-images.githubusercontent.com/64266044/235359267-bc8e5138-5551-47f8-bfcc-6ef374b67b1c.png)
 
 Probleme genel olarak modele zamansallığı nasıl daha iyi anlamasına yardımcı olurum şeklinde yaklaşıp bu doğrultuda feature lar yaratttım.İlk olarak `Tarih` feature'nu   `timeseries_features` fonksiyonu ile extract ederek.Zamansallıgı yakalayabilmesi için kategorik değişkenler oluşturdum.
-Sonrasında Dış kaynaktan veriler import edildi bu verilere lag edilerek kullanildi.
+Sonrasında Dış kaynaktan veriler import edildi bu verilere lag edilerek kullanildi.Validasyon datası seçiminde  ilk önce  kabaca 3 aylık TimeSeriesSplit yaptım (`TimeSeriesSplit(n_splits=3, test_size=2200)`).Sonrasında validasyonu grafikte gözlemleyebilmek için son 3 ayı validasyon datası olarak aldım.Çok fazla fark yaratmadı.
+
 
 ### Kullanılan dış kaynak verileri:
 * IZMIR için `get_meteostat_data` fonksiyonu ile hava durumu verileri çekildi.Shift edilerek lag feature lar oluşturuldu.
